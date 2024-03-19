@@ -94,4 +94,4 @@ We recommend that the checklist below is copied to an issue in the repository th
 
 
 - [ ] 15. **Send announce email**
-  - _Optional_: If it is a major release (new commands or significant updates to existing commands), send an email to DIME Team to announce the new version.
+  - _Optional_: If it is a major release (new commands or significant updates to existing commands), send an email to announce the new version your team.
