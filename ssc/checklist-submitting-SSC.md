@@ -7,6 +7,8 @@ We recommend that the checklist below is copied to an issue in the repository th
 
 ## Checklist
 
+**Plan the new release**
+
 - [ ] 1. **Decide on new version number**
   - Look up the current version number. It will be on the format `vX.Y`.
   - If the next release is a major update, then pick the new version number by incrementing the `X` value with 1 and set the `Y` value to 0.
@@ -19,10 +21,11 @@ We recommend that the checklist below is copied to an issue in the repository th
 
 
 - [ ] 3. **Manage milestones**
-  - Edit the name of milestone called `next-release`. Name it `vX.Y`. Replace "X.Y" with the version number of the current release.
+  - [ ] Edit the name of milestone called `next-release`. Name it `vX.Y`. Replace "X.Y" with the version number of the current release.
     - If this is the first release where milestones are used, then just create a new milestone called `vX.Y`.
-  - Create a new milestone and give that milestone the name `next-release`
+  - [ ] Create a new milestone and give that milestone the name `next-release`
 
+**Prepare the new release**
 
 - [ ] 4. **Merge milestone to `develop`**
   - Make sure that all fixed issues added to the milestone now called `vX.Y` are merged to the `develop` branch
@@ -52,6 +55,7 @@ We recommend that the checklist below is copied to an issue in the repository th
 - [ ] 7 **Create a .zip file**
   - Create a .zip file with all ado-files and help files only. These files are not allowed to be in a sub-folder in this .zip file. No other files should be in this folder.
 
+**Submit the new release**
 
 - [ ] 8. **Email Prof. Baum**
 	- [ ] 8.1 - If any commands are added or deleted, make note of that in the email.
@@ -66,6 +70,7 @@ We recommend that the checklist below is copied to an issue in the repository th
 - [ ] 10. **Wait for publication confirmation**
   - Do not proceed pass this step until Prof. Baum has confirmed that the new version is uploaded to the servers.
 
+**Finish up after the new release**
 
 - [ ] 11. **Merge `release-vX.Y` branch to `main`**
   - If step 2 and 3 was done correctly, then there should not be any merge conflicts in this step. Once merged, delete the `release-vX.Y` branch.
@@ -77,15 +82,16 @@ We recommend that the checklist below is copied to an issue in the repository th
 
 - [ ] 13. **VERY IMPORTANT STEP - Update `develop` and feature branches**
   - [ ] 13.1 **Update `develop` from `main`**
-    - This step brings edits done in the `release-vX.Y` branch and `main` branch during the release into the `develop` branch. This can either be done with a rebase (more advances, but cleaner history) or a merge (less advance, but messier history).
+    - This step brings edits done in the `release-vX.Y` branch and `main` branch during the release into the `develop` branch. This can _either_ be done with a rebase (more advanced, but result in "_cleaner_" Git history) _OR_ a merge (less advanced, but will lead plenty of arrows back and fort in the network graph).
     - _Rebase_: Rebase the `develop` branch onto `main`. The effect is that it looks as if the `develop` branch was created from where `main` is now.
     - _Merge_: Merge `main` into `develop`. The state of `develop` will be the same as after a rebase, but there will be merge arrows going multiple directions in the network graph. This is not too bad if done only with the `develop` branch, but looks messy if also done with feature branches in next step.
-    - [ ] 13.2 **Update feature branches from `develop`**
-      - Repeat the same process on all branches that are still open. But update the feature branches from `develop` and not `main`. Often it does not matter if you use `main`, but do it from `develop` in case more edits were already done in `main`.
+  - [ ] 13.2 **Update feature branches from `develop`**
+    - Repeat the same process above (rebase or merge) on all branches that are still open. But update the feature branches from `develop` and not `main`. Often it does not matter if you use `main`, but do it from `develop` in case more edits were already done in `main`.
 
 
 - [ ] 14. **Publish release note**
   - Once the new version is up on SSC, publish the release note.
 
 
-- [ ] 15. **Send announce email** - If it is a major release (new commands or significant updates to existing commands), send an email to DIME Team to announce the new version.
+- [ ] 15. **Send announce email**
+  - _Optional_: If it is a major release (new commands or significant updates to existing commands), send an email to announce the new version your team.
