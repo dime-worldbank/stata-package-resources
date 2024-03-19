@@ -83,7 +83,7 @@ We recommend that the checklist below is copied to an issue in the repository th
 - [ ] 13. **VERY IMPORTANT STEP - Update `develop` and feature branches**
   - [ ] 13.1 **Update `develop` from `main`**
     - This step brings edits done in the `release-vX.Y` branch and `main` branch during the release into the `develop` branch. This can _either_ be done with a rebase (more advanced, but result in "_cleaner_" Git history) _OR_ a merge (less advanced, but will lead plenty of arrows back and fort in the network graph).
-    - _Rebase_: Rebase the `develop` branch onto `main`. The effect is that it looks as if the `develop` branch was created from where `main` is now.
+    - _Rebase_: Rebase the `develop` branch onto `main`. The effect is that it looks as if the `develop` branch was created from where `main` is now. How to rebase depends on what git client you are using. 
     - _Merge_: Merge `main` into `develop`. The state of `develop` will be the same as after a rebase, but there will be merge arrows going multiple directions in the network graph. This is not too bad if done only with the `develop` branch, but looks messy if also done with feature branches in next step.
   - [ ] 13.2 **Update feature branches from `develop`**
     - Repeat the same process above (rebase or merge) on all branches that are still open. But update the feature branches from `develop` and not `main`. Often it does not matter if you use `main`, but do it from `develop` in case more edits were already done in `main`.
